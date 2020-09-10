@@ -4,7 +4,7 @@ from api.reading.models import Reading
 from api.reading.serializers import ReadingSerializer
 
 class ReadingViewSet(viewsets.ModelViewSet):
-    queryset = Reading.objects.all().order_by('rec_at')
+    queryset = Reading.objects.all().order_by('-created_at')
     serializer_class = ReadingSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['created_at']
