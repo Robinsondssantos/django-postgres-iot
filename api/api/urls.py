@@ -19,7 +19,7 @@ from django.urls import path
 from rest_framework import routers
 from api.reading import views as reading_views
 
-router = routers.DefaultRouter()
+router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'api/v2/readings.json', reading_views.ReadingViewSet)
 
 urlpatterns = [
