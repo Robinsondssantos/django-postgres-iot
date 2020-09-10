@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drf_firebase_auth',
+    'api.device',
     'api.reading'
 ]
 

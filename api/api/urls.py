@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 from api.reading import views as reading_views
+from api.device import views as device_views
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'api/v2/readings.json', reading_views.ReadingViewSet)
+router.register(r'api/v2/devices.json', device_views.DeviceViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
