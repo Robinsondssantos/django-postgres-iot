@@ -5,6 +5,7 @@ from rest_framework import filters
 from api.device.models import Device
 from api.device.serializers import DeviceSerializer
 
+
 class DeviceViewSet(viewsets.ModelViewSet):
     queryset = Device.objects.all().order_by('created_at')
     serializer_class = DeviceSerializer
@@ -12,5 +13,5 @@ class DeviceViewSet(viewsets.ModelViewSet):
     search_fields = ['description']
 
     # @method_decorator(cache_page(60*24*365)) # one year
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
+    # def dispatch(self, request, *args, **kwargs):
+    #     return super().dispatch(request, *args, **kwargs)
