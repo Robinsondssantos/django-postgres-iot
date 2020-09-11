@@ -13,19 +13,19 @@ Usage
 #. Set Firebase Authentication
 
 #. Create a virtual env
-... code-block: console
+.. code-block:: console
     python -m venv .env
 
 #. In Fedora install some dependencies (without that you can not install psycopg2 Python package)
-.... code-block: console
+.. code-block:: console
     dnf install python3-devel libpq-devel
 
 #. Install Python dependencies
-... code-block: console
+.. code-block:: console
     pip install -r requirements.txt
 
 #. Run migrations
-... code-block: console
+.. code-block:: console
     python manage.py makemigrations
     ...
     python manager.py migrate
