@@ -8,12 +8,28 @@ from a large timeseries database (1B), for that it uses some optimizations and a
 Usage
 =====
 
-#. Create a virtual env
-#. In Fedora install python3-devel and libpq-devel
-#. Install dependencies
-#. Run migrations
-#. Use postgres docker
+#. Use postgres docker container
+#. Use memcached docker container
 #. Set Firebase Authentication
+
+#. Create a virtual env
+... code-block: console
+    python -m venv .env
+
+#. In Fedora install some dependencies (without that you can not install psycopg2 Python package)
+.... code-block: console
+    dnf install python3-devel libpq-devel
+
+#. Install Python dependencies
+... code-block: console
+    pip install -r requirements.txt
+
+#. Run migrations
+... code-block: console
+    python manage.py makemigrations
+    ...
+    python manager.py migrate
+
 #. Use populate_database.py to create a huge database 
 
 
