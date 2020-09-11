@@ -1,3 +1,5 @@
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from rest_framework import viewsets
 from rest_framework import filters
 from api.device.models import Device
@@ -8,3 +10,7 @@ class DeviceViewSet(viewsets.ModelViewSet):
     serializer_class = DeviceSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['description']
+
+    # @method_decorator(cache_page(60*24*365)) # one year
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
