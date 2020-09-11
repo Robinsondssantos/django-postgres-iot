@@ -33,8 +33,7 @@ Run migrations
 
 ```bash
 python manage.py makemigrations
-...
-python manager.py migrate
+python manage.py migrate
 ```
 
 Use populate_database.py to create a huge database 
