@@ -1,44 +1,50 @@
-Django Postgres IOT: An IOT project example using Django Rest Framework, Firebase Authentication and Postgres
-=============================================================================================================
+# Django Postgres IOT: An IOT project example using Django Rest Framework, Firebase Authentication and Postgres
 
 This project aims to create a web server that responds in less than 100 ms to all data requests 
 from a large timeseries database (1B), for that it uses some optimizations and architectural decisions
 
 
-Usage
-=====
+## Usage
 
-#. Use postgres docker container
-#. Use memcached docker container
-#. Set Firebase Authentication
+* Use postgres docker container
+* Use memcached docker container
+* Set Firebase Authentication
 
-#. Create a virtual env
-.. code-block:: console
+Create a virtual env
 
-    python -m venv .env
+```bash
+python -m venv .env
+```
 
-#. In Fedora install some dependencies (without that you can not install psycopg2 Python package)
-.. code-block:: console
+In Fedora install some dependencies (without that you can not install psycopg2 Python package)
 
-    dnf install python3-devel libpq-devel
+```bash
+dnf install python3-devel libpq-devel
+```
 
-#. Install Python dependencies
-.. code-block:: console
+Install Python dependencies
 
-    pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
-#. Run migrations
-.. code-block:: console
-
-    python manage.py makemigrations
-    ...
-    python manager.py migrate
-
-#. Use populate_database.py to create a huge database 
+Run migrations
 
 
-License
-=======
+```bash
+python manage.py makemigrations
+...
+python manager.py migrate
+```
+
+Use populate_database.py to create a huge database 
+
+```bash
+./populate_database.py
+```
+
+
+## License
 
 The MIT License (MIT)
 
