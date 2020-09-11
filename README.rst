@@ -9,6 +9,7 @@ Usage
 =====
 
 #. Create a virtual env
+#. In Fedora install python3-devel and libpq-devel
 #. Install dependencies
 #. Run migrations
 #. Use postgres docker
