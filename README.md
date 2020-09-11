@@ -6,29 +6,43 @@ from a large timeseries database (1B), for that it uses some optimizations and a
 
 ## Usage
 
-* Use postgres docker container
-* Use memcached docker container
-* Set Firebase Authentication
+*In Fedora use podman command instead docker*
 
-Create a virtual env
+1. Use postgres docker container
+
+```bash
+docker run --name postgres-iot-1 -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+```
+
+2. Use memcached docker container
+
+```bash
+docker run --name memcached-iot-1 -p 11211:11211 -d memcached memcached -m 64
+```
+
+3. Set Firebase Authentication
+
+You need create a Firebase Project and download de credentials
+
+4. Create a virtual env
 
 ```bash
 python -m venv .env
 ```
 
-In Fedora install some dependencies (without that you can not install psycopg2 Python package)
+5. In Fedora install some dependencies (without that you can not install psycopg2 Python package)
 
 ```bash
 dnf install python3-devel libpq-devel
 ```
 
-Install Python dependencies
+6. Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run migrations
+7. Run migrations
 
 
 ```bash
@@ -36,7 +50,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-Use populate_database.py to create a huge database 
+8. Use populate_database.py to create a huge database 
 
 ```bash
 ./populate_database.py
